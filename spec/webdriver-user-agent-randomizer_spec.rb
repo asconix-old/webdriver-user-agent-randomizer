@@ -21,7 +21,6 @@ describe "webdriver user agent randomizer" do
   it "can create a new webdriver driver using Chrome and a random user agent" do
     @driver = UserAgent.driver(:browser => :chrome)
     @driver.browser.should == :chrome
-    puts @driver.execute_script('return navigator.userAgent')
     @driver.execute_script('return navigator.userAgent').should_not be_nil
   end
 
